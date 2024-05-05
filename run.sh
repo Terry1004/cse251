@@ -35,9 +35,12 @@ case $folder in
     step-10)
         cd ./steps/step-10
         case $target in
-            "") cmd="make garage64" docker compose up --build;;
-            reference) cmd="./garage-solution64" docker compose up --build;;
+            "") docker compose run --build cse251 /bin/bash -c "make garage64 && ./garage";;
+            reference) docker compose run --build cse251 ./garage-solution64;;
             debug) docker compose up --build -d;;
+            clean) 
+                cd ./Garage
+                make clean;;
         esac;;
     step-12)
         cd ./steps/step-12
@@ -68,8 +71,11 @@ case $folder in
     step-14)
         cd ./steps/step-14
         case $target in
-            "") cmd="make robot64" docker compose up --build;;
+            "") docker compose run --build cse251 /bin/bash -c "make robot64 && ./robot";;
             debug) docker compose up --build -d;;
+            clean)
+                cd ./Robot
+                make clean;;
         esac;;
     project-1)
         make ./projects/project-1/proj1.o
@@ -77,10 +83,13 @@ case $folder in
     project-2)
         cd ./projects/project-2
         case $target in
-            "") cmd="make elevator64" docker compose up --build;;
-            reference) cmd="./elevator-solution-64" docker compose up --build;;
-            eval-speed) cmd="make elevator64-eval-speed" docker compose up --build;;
+            "") docker compose run --build cse251 /bin/bash -c "make elevator64 && ./elevator";;
+            reference) docker compose run --build cse251 ./elevator-solution-64;;
+            eval-speed) docker compose run --build cse251 make elevator64-eval-speed;;
             debug) docker compose up --build -d;;
+            clean)
+                cd ./Elevator
+                make clean;;
         esac;;
     project-3)
         cd ./projects/project-3

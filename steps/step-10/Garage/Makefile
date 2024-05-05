@@ -12,7 +12,6 @@ garage32: garage.o
 
 garage64: garage.o
 	g++ -o garage garage.o -lm libGarageLib64.a `wx-config --libs`
-	./garage
 
 clean:
 	rm -f garage.o garage

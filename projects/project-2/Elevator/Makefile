@@ -15,7 +15,6 @@ elevator32: elevator.o
 
 elevator64: elevator.o
 	g++ -o elevator elevator.o -lm libElevatorLib64.a `wx-config --libs`
-	./elevator
 
 elevator64-eval-speed: elevator-eval-speed.o
 	g++ -o elevator-eval-speed elevator-eval-speed.o -lm libElevatorLib64.a `wx-config --libs`

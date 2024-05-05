@@ -12,7 +12,6 @@ robot32: robot.o
 
 robot64: robot.o
 	g++ -o robot robot.o -lm libRobotLib64.a `wx-config --libs`
-	./robot
 
 clean:	
 	rm -rf robot *.o
