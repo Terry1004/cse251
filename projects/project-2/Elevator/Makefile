@@ -21,4 +21,4 @@ elevator64-eval-speed: elevator-eval-speed.o
 	./elevator-eval-speed
 
 clean:
-	rm elevator.o elevator-eval-speed.o
+	rm elevator.o elevator-eval-speed.o elevator
